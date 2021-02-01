@@ -44,6 +44,7 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')
 })
 
+//API to uplopad file
 app.post('/uploadfile', (req, res) => {
     if (req.files) {
         console.log('req.file')
@@ -98,6 +99,8 @@ app.post('/uploadfile', (req, res) => {
     }
 })
 
+
+// API to get List of Uploaded File
 app.get('/filelist', async (req, res) => {
     try {
         const posts = await filesModel.find();
